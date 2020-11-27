@@ -3,12 +3,12 @@ const mongoose = require('mongoose');
 // mongoose.set('useUnifiedTopology', true);
 const Schema = mongoose.Schema;
 
-const trendingSchema = new Schema ({
+const articleSchema = new Schema ({
     title:{
         type:String,
         required:true
     },
-    imageUrl:{
+    image:{
         type:String,
         required:true
     },
@@ -24,10 +24,26 @@ const trendingSchema = new Schema ({
         type:String,
         required:true
     },
+    author:{
+        type:String,
+        required:true
+    },
+    category:{
+        type:String,
+        required:true
+    },
+    trending:{
+        type:String,
+        required:true
+    },
+    year:{
+        type:Number,
+        required:true
+    },
     month:{
         type:String,
         required:true
     }
 });
 
-module.exports= mongoose.model('Trending',trendingSchema);
+module.exports= mongoose.model('Article',articleSchema);

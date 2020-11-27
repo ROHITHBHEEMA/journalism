@@ -6,7 +6,9 @@ const adminControllers = require('../controllers/admin');
 /* GET home page. */
 router.get('/add-trending', adminControllers.getTrending);
 
-router.post('/add-trending',adminControllers.postTrending)
+router.post('/add-trending',adminControllers.postTrending);
+
+
 
 
 

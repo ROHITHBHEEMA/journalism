@@ -1,0 +1,32 @@
+<%- include('../includes/header.ejs') %>
+
+</head>
+
+<body>
+    <%- include('../includes/navbar.ejs') %>
+<main>
+  
+  <div class="container">
+    
+                    <article>
+                      <header>
+                          <h1> <%= article.title %></h1>
+                      </header>
+                      <div>
+                          <img  height="200px" width="200px" src="/images/<%= article.image%>.png
+                              alt="<%= article.title %>">
+                      </div>
+                      <div>
+                          <h2><%= article.date %></h2>
+                          <h2><%= article.month %></h2>
+                          <p><%= article.description %></p>
+                      </div>
+                    </article>
+                  
+</div>
+</main>
+
+
+
+
+<%- include('../includes/footer.ejs') %>

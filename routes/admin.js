@@ -4,11 +4,11 @@ var router = express.Router();
 const adminControllers = require('../controllers/admin');
 
 /* GET home page. */
-router.get('/add-trending', adminControllers.getTrending);
+router.get('/add-article', adminControllers.getArticle);
 
-router.post('/add-trending',adminControllers.postTrending);
+router.post('/add-article',adminControllers.postArticle);
 
-
+router.get('/add-author', adminControllers.getAuthor);
 
 
 

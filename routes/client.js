@@ -8,4 +8,10 @@ router.get('/', clientControllers.getHome);
 
 router.get('/articles/:articleid',clientControllers.getArticle);
 
+router.get('/about', clientControllers.getAbout);
+
+router.get('/alumni', clientControllers.getAlumni);
+
+router.get('/author', clientControllers.getAuthor);
+
 module.exports = router;

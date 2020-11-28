@@ -29,3 +29,25 @@ exports.getArticle = (req,res,next) =>{
         console.log(err);
     })
 };
+
+exports.getAbout = (req,res,next) =>{
+    res.render('client/about.ejs' , {
+        pageTitle: 'About',
+        path : '/about',
+    });
+};
+
+
+exports.getAlumni = (req,res,next) =>{
+    res.render('client/alumni.ejs' , {
+        pageTitle: 'Alumni Articles',
+        path : '/alumni',
+    });
+};
+
+exports.getAuthor = (req,res,next) =>{
+    res.render('client/author.ejs' , {
+        pageTitle: 'Authors',
+        path : '/author',
+    });
+};

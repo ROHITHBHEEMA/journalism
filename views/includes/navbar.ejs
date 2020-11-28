@@ -9,7 +9,21 @@
         <a class="nav-link" href="#">Features</a>
         <a class="nav-link" href="#">Pricing</a> -->
         <a class="nav-link <%= path === '/' ? 'active' : '' %>" href="/">Home</a>
-        <a class="nav-link <%= path === '/add-trending' ? 'active' : '' %>" href="/add-trending">Add Trending Articles</a>
+        <a class="nav-link <%= path === '/about' ? 'active' : '' %>" href="/about">About</a>
+        <a class="nav-link <%= path === '/alumini' ? 'active' : '' %>" href="/alumni">Alumni</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle <%= path === '/institute' ? 'active' : '' %> " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Institute
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/tech-articles">Tech Articles</a>
+            <a class="dropdown-item" href="/sports-articles">Sports Articles</a>
+            <a class="dropdown-item" href="/cult-articles">Cult Articles</a>
+          </div>
+        </li>
+        <a class="nav-link <%= path === '/author' ? 'active' : '' %>" href="/author">Authors</a>
+        <a class="nav-link <%= path === '/add-article' ? 'active' : '' %>" href="/add-article">Add Articles</a>
+        <a class="nav-link <%= path === '/add-author' ? 'active' : '' %>" href="/add-author">Add Author</a>
       </div>
     </div>
   </nav>

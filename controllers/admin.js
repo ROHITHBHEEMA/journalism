@@ -1,13 +1,13 @@
 const Articles = require('../models/article');
 
-exports.getTrending = (req,res,next) => {
-    res.render('admin/add-trending.ejs' , {
-        pageTitle: 'Add Trending Articles',
-        path : '/add-trending'
+exports.getArticle = (req,res,next) => {
+    res.render('admin/add-article.ejs' , {
+        pageTitle: 'Add Article',
+        path : '/add-article'
     });
 };
 
-exports.postTrending = (req,res,next) => {
+exports.postArticle = (req,res,next) => {
     const title = req.body.title;
     const image = req.body.image;
     const date = req.body.date;
@@ -41,4 +41,11 @@ exports.postTrending = (req,res,next) => {
         console.log(err);
     });
     
+};
+
+exports.getAuthor = (req,res,next) => {
+    res.render('admin/add-author.ejs' , {
+        pageTitle: 'Add Author',
+        path : '/add-author'
+    });
 };

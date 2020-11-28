@@ -16,6 +16,7 @@
     "express": "^4.17.1",
     "mongodb": "^3.6.3",
     "mongoose": "^5.10.16",
+    "mongoose-autopopulate": "^0.12.3",
     "nodemon": "^2.0.6"
   }
 }

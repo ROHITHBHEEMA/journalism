@@ -19,6 +19,7 @@ exports.postArticle = (req,res,next) => {
     const author = req.body.author;
     const trending = req.body.trending;
     const shortdescription = req.body.shortdescription;
+    
 
     const article = new Articles ({
         title : title,
@@ -36,6 +37,14 @@ exports.postArticle = (req,res,next) => {
     
     article.save()
     .then(result =>{
+        const query = { name : result.author };
+        Author.findOneAndUpdate(query,{$push:{articles : result}},function (err, author){
+                if(err)
+                {
+                    console.log(err);
+                }
+        });
+        
         res.redirect('/');
     })
     .catch(err=>{
@@ -56,8 +65,6 @@ exports.postAuthor = (req,res,next) => {
     const name = req.body.name;
     const shortbio = req.body.shortbio;
     const bio = req.body.bio;
-    
-
     const author = new Author ({
         name : name,
         bio : bio,

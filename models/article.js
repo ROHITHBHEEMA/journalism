@@ -45,5 +45,5 @@ const articleSchema = new Schema ({
         required:true
     }
 });
-
+// articleSchema.plugin(require('mongoose-autopopulate'));
 module.exports= mongoose.model('Article',articleSchema);

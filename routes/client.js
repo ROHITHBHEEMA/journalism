@@ -12,6 +12,14 @@ router.get('/about', clientControllers.getAbout);
 
 router.get('/alumni', clientControllers.getAlumni);
 
-router.get('/author', clientControllers.getAuthor);
+router.get('/author', clientControllers.getAuthors);
+
+router.get('/tech-articles', clientControllers.getTech);
+
+router.get('/sports-articles', clientControllers.getSports);
+
+router.get('/cult-articles', clientControllers.getCult);
+
+router.get('/authors/:authorid',clientControllers.getAuthor);
 
 module.exports = router;

@@ -1,4 +1,5 @@
 const Articles = require('../models/article');
+const Author = require('../models/author');
 
 exports.getArticle = (req,res,next) => {
     res.render('admin/add-article.ejs' , {
@@ -48,4 +49,27 @@ exports.getAuthor = (req,res,next) => {
         pageTitle: 'Add Author',
         path : '/add-author'
     });
+};
+
+
+exports.postAuthor = (req,res,next) => {
+    const name = req.body.name;
+    const shortbio = req.body.shortbio;
+    const bio = req.body.bio;
+    
+
+    const author = new Author ({
+        name : name,
+        bio : bio,
+        shortbio : shortbio
+    })
+    
+    author.save()
+    .then(result =>{
+        res.redirect('/author');
+    })
+    .catch(err=>{
+        console.log(err);
+    });
+    
 };

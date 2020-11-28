@@ -1,4 +1,5 @@
 const Articles = require('../models/article');
+const Authors = require('../models/author');
 
 exports.getHome = (req,res,next) => {
     Articles.find()
@@ -39,15 +40,88 @@ exports.getAbout = (req,res,next) =>{
 
 
 exports.getAlumni = (req,res,next) =>{
-    res.render('client/alumni.ejs' , {
-        pageTitle: 'Alumni Articles',
-        path : '/alumni',
-    });
+    Articles.find()
+    .then(articles =>{
+        res.render('client/alumni.ejs' , {
+            pageTitle: 'Alumni Articles',
+            path : '/alumni',
+            articles : articles
+        });
+    })
+    .catch(err=>{
+        console.log(err);
+    })
 };
 
+exports.getAuthors = (req,res,next) =>{
+    Authors.find()
+    .then(authors =>{
+        res.render('client/author.ejs' , {
+            pageTitle: 'Authors',
+            path : '/author',
+            authors : authors
+        });
+    })
+    .catch(err=>{
+        console.log(err);
+    })
+};
+
+exports.getTech = (req,res,next) =>{
+    Articles.find()
+    .then(articles =>{
+        res.render('client/tech.ejs' , {
+            pageTitle: 'Tech Articles',
+            path : '/institute',
+            articles : articles
+        });
+    })
+    .catch(err=>{
+        console.log(err);
+    })
+};
+
+exports.getSports = (req,res,next) =>{
+    Articles.find()
+    .then(articles =>{
+        res.render('client/sports.ejs' , {
+            pageTitle: 'Sports Articles',
+            path : '/institute',
+            articles : articles
+        });
+    })
+    .catch(err=>{
+        console.log(err);
+    })
+};
+
+exports.getCult = (req,res,next) =>{
+    Articles.find()
+    .then(articles =>{
+        res.render('client/cult.ejs' , {
+            pageTitle: 'cult Articles',
+            path : '/institute',
+            articles : articles
+        });
+    })
+    .catch(err=>{
+        console.log(err);
+    })
+};
+
+
 exports.getAuthor = (req,res,next) =>{
-    res.render('client/author.ejs' , {
-        pageTitle: 'Authors',
-        path : '/author',
-    });
+    const autid = req.params.authorid;
+    Authors.findById(autid)
+    .then(author =>{
+        console.log(author);
+        res.render('client/author-list.ejs' , {
+            pageTitle: author.name,
+            path : '/',
+            author : author
+        });
+    })
+    .catch(err=>{
+        console.log(err);
+    })
 };

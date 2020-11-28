@@ -5,14 +5,14 @@
 <body>
     <%- include('../includes/navbar.ejs') %>
 <main>
-  <h1>Alumni Articles</h1>
+  <h1>Sports Articles</h1>
   <div class="container">
     <div class="row">
     <% if (articles.length > 0) { %>
         
             <% for (let article of articles) { %>
               
-              <% if (article.category === 'alumni') { %>
+              <% if (article.category === 'sports') { %>
                   <div class="col-lg-4">
                     <article>
                       <header>

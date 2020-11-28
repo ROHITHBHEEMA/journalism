@@ -6,50 +6,20 @@
     <%- include('../includes/navbar.ejs') %>
     
     <main>
-        <form action="/add-article" method="POST" >
+        <form action="/add-author" method="POST" >
             <div class="form-group" >
-              <label for="title">Title</label>
-              <input type="text" name="title" class="form-control" id="title">
+              <label for="name">Name</label>
+              <input type="text" name="name" class="form-control" id="name">
             </div>
-            <div class="form-group" >
-                <label for="author">Author</label>
-                <input type="text" name="author" class="form-control" id="author">
-            </div>
-            <div class="form-group" >
-                <label for="image">Image Number</label>
-                <input type="number" name="image" class="form-control" id="image">
-            </div>
-            <div class="form-group">
-                <label for="date">Date</label>
-                <input type="number" name="date" class="form-control" id="date">
-            </div>
-            <div class="form-group">
-                <label for="price">Month</label>
-                <input type="text" name="month" class="form-control" id="month">
-            </div>
-            <div class="form-group">
-                <label for="year">Year</label>
-                <input type="number" name="year" class="form-control" id="year">
-            </div>
-            <div class="form-group">
-                <label for="short-description">Short-Description</label>
-                <textarea name="shortdescription" id="short-description" class="form-control" rows="3"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="description">Description</label>
-                <textarea name="description" id="description" class="form-control" rows="5"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="trending">Trending</label>
-                <input type="text" name="trending" class="form-control" id="trending">
-            </div>
-            <div class="form-group">
-                <label for="category">Category</label>
-                <input type="text" name="category" class="form-control" id="category">
-            </div>
-
             
-            
+            <div class="form-group">
+                <label for="short-bio">Short-Bio</label>
+                <textarea name="shortbio" id="short-bio" class="form-control" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="bio">bio</label>
+                <textarea name="bio" id="bio" class="form-control" rows="5"></textarea>
+            </div>
             
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>

@@ -10,6 +10,10 @@ router.post('/add-article',adminControllers.postArticle);
 
 router.get('/add-author', adminControllers.getAuthor);
 
+router.post('/add-author', adminControllers.postAuthor);
+
+
+
 
 
 module.exports = router;

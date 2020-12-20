@@ -22,4 +22,8 @@ router.get('/cult-articles', clientControllers.getCult);
 
 router.get('/authors/:authorid',clientControllers.getAuthor);
 
+router.get('/auth/google',clientControllers.getLogin);
+
+router.get('/auth/google/callback',clientControllers.getCall);
+
 module.exports = router;

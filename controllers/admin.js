@@ -35,6 +35,15 @@ exports.postArticle = (req,res,next) => {
 
     })
     
+//     Story.
+//   findOne({ title: 'Casino Royale' }).
+//   populate('author').
+//   exec(function (err, story) {
+//     if (err) return handleError(err);
+//     console.log('The author is %s', story.author.name);
+//     // prints "The author is Ian Fleming"
+//   });
+
     article.save()
     .then(result =>{
         const query = { name : result.author };
@@ -45,6 +54,7 @@ exports.postArticle = (req,res,next) => {
                 }
         });
         
+        
         res.redirect('/');
     })
     .catch(err=>{
@@ -54,6 +64,8 @@ exports.postArticle = (req,res,next) => {
 };
 
 exports.getAuthor = (req,res,next) => {
+
+    
     res.render('admin/add-author.ejs' , {
         pageTitle: 'Add Author',
         path : '/add-author'

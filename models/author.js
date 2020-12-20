@@ -64,7 +64,7 @@ const authorSchema = new Schema ({
         // {
         
         //     type : Schema.Types.ObjectId,
-        //     autopopulate: true,
+           
         //     ref : 'article'
 
         //  }

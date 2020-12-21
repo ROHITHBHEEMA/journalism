@@ -22,11 +22,17 @@
           </div>
         </li>
         <a class="nav-link <%= path === '/author' ? 'active' : '' %>" href="/author">Authors</a>
-        <a class="nav-link <%= path === '/add-article' ? 'active' : '' %>" href="/add-article">Add Articles</a>
-        <a class="nav-link <%= path === '/add-author' ? 'active' : '' %>" href="/add-author">Add Author</a>
+        
+
         <% if (!isLogged) { %>
+
           <a class="nav-link" href="/auth/google"><i class="fa fa-user"></i>Login</a>
           <% } else { %>
+            <% if (user.isadmin === "true") { %>
+              <a class="nav-link <%= path === '/add-article' ? 'active' : '' %>" href="/add-article">Add Articles</a>
+              <a class="nav-link <%= path === '/add-author' ? 'active' : '' %>" href="/add-author">Add Author</a>
+              <%}%>
+
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle <%= path === '/institute' ? 'active' : '' %> " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <%= user.displayName %>

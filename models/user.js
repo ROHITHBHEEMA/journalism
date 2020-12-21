@@ -30,6 +30,9 @@ const UserSchema = new Schema({
     type: Date,
     default: Date.now,
   },
+  isadmin:{
+    type : String,
+  }
 })
 
 // UserSchema.plugin(passportLocalMongoose, { usernameField : 'googleId' });

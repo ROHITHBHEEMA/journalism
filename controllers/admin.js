@@ -4,6 +4,8 @@ const Author = require('../models/author');
 exports.getArticle = (req,res,next) => {
     res.render('admin/add-article.ejs' , {
         pageTitle: 'Add Article',
+        user: req.user,
+        isLogged: req.isAuthenticated(),
         path : '/add-article'
     });
 };
@@ -68,6 +70,8 @@ exports.getAuthor = (req,res,next) => {
     
     res.render('admin/add-author.ejs' , {
         pageTitle: 'Add Author',
+        user: req.user,
+        isLogged: req.isAuthenticated(),
         path : '/add-author'
     });
 };

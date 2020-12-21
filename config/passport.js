@@ -6,7 +6,7 @@ const findOrCreate = require('mongoose-findorcreate');
 
 module.exports = function (passport) {
 
-    passport.use(User.createStrategy());
+    // passport.use(User.createStrategy());
 
     passport.serializeUser(function(user, done) {
         done(null, user);
@@ -26,7 +26,7 @@ module.exports = function (passport) {
       },
 
         function(accessToken, refreshToken, profile, done) {
-    console.log(profile);
+    // console.log(profile);
 
     // User.findOrCreate({ googleId: profile.id }, function (err, user) {
     //     return cb(err, user);
@@ -53,9 +53,12 @@ module.exports = function (passport) {
                 lastName : lastName,
                 image : image
             })
+
+            
     
             user.save()
             .then(result =>{
+                console.log(user);
             res.redirect('/');
             })
             .catch(err=>{

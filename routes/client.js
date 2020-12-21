@@ -26,4 +26,6 @@ router.get('/authors/:authorid',clientControllers.getAuthor);
 
 // router.get('/auth/google/callback',clientControllers.getCall);
 
+router.post('/add-comment',clientControllers.postComment);
+
 module.exports = router;

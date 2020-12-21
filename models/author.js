@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 // mongoose.set('useNewUrlParser', true);
 // mongoose.set('useUnifiedTopology', true);
-const article = require('./article')
+
 const Schema = mongoose.Schema;
 
 const articleSchema = new Schema ({

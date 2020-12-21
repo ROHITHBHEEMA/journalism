@@ -1,6 +1,7 @@
 const express = require('express')
 const passport = require('passport')
 const router = express.Router()
+require('../config/passport')(passport)
 
 // @desc    Auth with Google
 // @route   GET /auth/google

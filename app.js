@@ -7,10 +7,10 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 const passport = require("passport");
 const passportLocalMongoose = require("passport-local-mongoose");
-
+const MongoStore = require('connect-mongo')(session)
 const findOrCreate = require('mongoose-findorcreate');
 
-require('./config/passport')(passport)
+
 
 const app = express();
 
@@ -25,7 +25,8 @@ app.set('views', 'views');
 app.use(session({
     secret: "Our little secret.",
     resave: false,
-    saveUninitialized: false
+    saveUninitialized: false,
+    store: new MongoStore({ mongooseConnection: mongoose.connection })
   }));
 
 app.use(passport.initialize());

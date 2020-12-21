@@ -7,7 +7,7 @@ const passportLocalMongoose = require("passport-local-mongoose");
 const findOrCreate = require('mongoose-findorcreate');
 
 
-passport.use(User.createStrategy());
+// passport.use(User.createStrategy());
 
 passport.serializeUser(function(user, done) {
   done(null, user.id);

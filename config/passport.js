@@ -21,7 +21,7 @@ module.exports = function (passport) {
       {
         clientID: "309410118944-mci5i430hmmt32fdcho3aaj0sristshl.apps.googleusercontent.com",
         clientSecret: "47qlVZq0VxJWDUxYYVI2I6op",
-        callbackURL: "http://localhost:3000/auth/google/callback",
+        callbackURL: "https://journalismbody-iitbbs.herokuapp.com/auth/google/callback",
         userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo"
       },
 

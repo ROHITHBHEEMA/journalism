@@ -1,7 +1,6 @@
 const Articles = require('../models/article');
 const Authors = require('../models/author');
 const Users = require('../models/user');
-const { ensureAuth, ensureGuest } = require('../middleware/auth')
 
 //start of user
 // require('dotenv').config();

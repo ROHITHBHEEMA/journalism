@@ -40,7 +40,7 @@ module.exports = function (passport) {
           } 
           else {
               console.log('ELSE');
-              User.insertOne({
+              User.insert({
                 "googleId": profile.id,
                 "displayName": profile.displayName,
                 "firstName": profile.name.givenName,
@@ -84,11 +84,11 @@ module.exports = function (passport) {
     // )
   
 
-  passport.serializeUser((user, done) => {
-    done(null, user.id)
-  })
+//   passport.serializeUser((user, done) => {
+//     done(null, user.id)
+//   })
 
-  passport.deserializeUser((id, done) => {
-    User.findById(id, (err, user) => done(err, user))
-  })
+//   passport.deserializeUser((id, done) => {
+//     User.findById(id, (err, user) => done(err, user))
+//   })
 }

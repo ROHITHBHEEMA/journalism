@@ -27,7 +27,15 @@
         <% if (!isLogged) { %>
           <a class="nav-link" href="/auth/google"><i class="fa fa-user"></i>Login</a>
           <% } else { %>
-          <a class="nav-link" href="/logout">&nbsp;<%=user.name %>&nbsp;<i class="fa fa-md fa-sign-out"></i></a>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle <%= path === '/institute' ? 'active' : '' %> " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Institute
+              </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href=""> <%= user.displayName %></a>
+              <a class="dropdown-item" href="/logout">logout</a>
+            </div>
+          </li>
           <%}%>
         <!-- <a class="nav-link  <%= path === '/login' ? 'active' : '' %>" href="/login">Login</a>
         <a class="nav-link  <%= path === '/logout' ? 'active' : '' %>" href="/logout">Logout</a> -->

@@ -1,32 +1,36 @@
-const mongoose = require('mongoose');
-// mongoose.set('useNewUrlParser', true);
-// mongoose.set('useUnifiedTopology', true);
+const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
+
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const session = require('express-session');
 const passport = require("passport");
 const passportLocalMongoose = require("passport-local-mongoose");
-const findOrCreate = require('mongoose-findorcreate');
 
-const userSchema = new Schema ({
-    
-    googleid:{
-        type:String
-    },
-    token:{
-        type:String
-    },
-    name:{
-        type:String
-    },
-    email:{
-        type:String
-    },
-    photo:{
-        type:String
-    }
-});
+const UserSchema = new Schema({
+  googleId: {
+    type: String,
+    required: true,
+  },
+  displayName: {
+    type: String,
+    required: true,
+  },
+  firstName: {
+    type: String,
+    required: true,
+  },
+  lastName: {
+    type: String,
+    required: true,
+  },
+  image: {
+    type: String,
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
+})
 
-userSchema.plugin(passportLocalMongoose);
-userSchema.plugin(findOrCreate);
-// articleSchema.plugin(require('mongoose-autopopulate'));
-module.exports= mongoose.model('User',userSchema);
+UserSchema.plugin(passportLocalMongoose, { usernameField : 'userName' });
+module.exports = mongoose.model('User', UserSchema)

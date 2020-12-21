@@ -39,19 +39,40 @@ module.exports = function (passport) {
               return done(null, user);
           } 
           else {
-              console.log('ELSE');
-              User.insert({
-                "googleId": profile.id,
-                "displayName": profile.displayName,
-                "firstName": profile.name.givenName,
-                "lastName": profile.name.familyName,
-                "image": profile.photos[0].value,
+            console.log('ELSE');
+            const googleId = profile.id;
+            const displayName = profile.displayName;
+            const firstName = profile.name.givenName;
+            const lastName = profile.name.familyName;
+            const image = profile.photos[0].value;
+
+            const user = new User ({
+                googleId : googleId,
+                displayName : displayName,
+                firstName : firstName,
+                lastName : lastName,
+                image : image
+            })
+    
+            user.save()
+            .then(result =>{
+            res.redirect('/');
+            })
+            .catch(err=>{
+            console.log(err);
+        });
+            //   User.insert({
+            //     "googleId": profile.id,
+            //     "displayName": profile.displayName,
+            //     "firstName": profile.name.givenName,
+            //     "lastName": profile.name.familyName,
+            //     "image": profile.photos[0].value,
             //   "googleid" : profile.id,
             //   "token" : token,
             //   "name"  : profile.displayName,
             //   "email" : profile.emails[0].value,
             //   "photo" : profile.photos[0].value
-              })
+            //   })
             //   console.log(profile.emails[0].value);
               return done(null, user);
             }
